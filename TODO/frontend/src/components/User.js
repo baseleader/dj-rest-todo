@@ -1,38 +1,62 @@
-import React from "react";
+import React from 'react';
 
-const UsersItem = ({user}) => {
+
+const UserItem = ({users}) => {
     return (
         <tr>
-            <td>
-                {user.first_name}
+            <td class="Line">
+                {users.username}
             </td>
-            <td>
-                {user.last_name}
+            <td class="Line">
+                {users.first_name}
             </td>
-            <td>
-                {user.user_email}
+            <td class="Line">
+                {users.last_name}
             </td>
+            <td class="Line">
+                {users.email}
+            </td>
+
         </tr>
     )
 }
 
-const UsersList = ({users}) => {
+const UserList = ({users}) => {
     return (
-        <table>
-            <th>
-                First name
-            </th>
-            <th>
-                Last name
-            </th>
-            <th>
-                User email
-            </th>
+        <div className="card-body">
+            <div className="popover-header">
+                <ul>
+                    <li><a href="App.js">Главная</a></li>
+                    <li><a href="#">Some Text</a></li>
+                    <li><a href="#">Some Text</a></li>
+                    <li><a href="#">Личный кабинет</a></li>
+                </ul>
+            </div>
+            <div className="legend">
+                <table className="form-range">
+                    <th>
+                        Никнейм
+                    </th>
+                    <th>
+                        Имя пользователя
+                    </th>
+                    <th>
+                        Фамилия пользователя
+                    </th>
+                    <th>
+                        Email пользователя
+                    </th>
+                    {users.map((user) => <UserItem user={user}/>)}
 
-            {users.map((user) => <UsersItem user={user}/>)}
+                </table>
+            </div>
+            <div className="carousel-indicators [data-bs-target]">
+                <h1 className="display-3">FOOTER</h1>
+            </div>
 
-        </table>
+        </div>
     )
 }
 
-export default UsersList;
+
+export default UserList
