@@ -26,6 +26,7 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'users',
+    'facebook',
     'corsheaders',
 ]
 
@@ -113,3 +114,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
+# REST_FRAMEWORK = {
+#     'DEFAULT_RENDERER_CLASSES': [
+#         # 'rest_framework.renderers.JSONRenderer',
+#         # 'rest_framework.renderers.BrowsableAPIRenderer',
+#     ]
+# }
